@@ -1,0 +1,3 @@
+***** is a sophomore student.
+And ***** takes three courses this year including ICS and data structure.
+For both of these two courses, ***** uses ****** as programming tool.

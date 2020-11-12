@@ -1,0 +1,15 @@
+Part1
+1.O(m*n)
+2.O((m+n)*logn)
+When the length of the list and the search times are both relatively small, then
+the first method seems to be better. But normally, we have huge number of items in
+the list, and do many times of search, then the second method is absolutely better.
+
+
+Part2
+1.O(1),O(N)
+2.(1): O(N)
+  (2): O(N^2)
+  (3): O(N^2)
+3.O(N*logN),O(N*logN)
+

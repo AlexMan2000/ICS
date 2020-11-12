@@ -1,0 +1,3 @@
+Jaine is a sophomore student.
+And Jaine takes three courses this year including ICS and data structure.
+For both of these two courses, Jaine uses Python as programming tool.

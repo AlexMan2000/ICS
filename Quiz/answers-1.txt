@@ -1,0 +1,66 @@
+————Answer Sheet: ICS 2020 Fall Quiz1 --——
+
+ 
+I Multiple choice 
+1. C
+
+2. A
+
+3. A
+
+4. C
+
+5. A
+
+
+II Short answers
+1. According to the A2 instruction, B1AA will jump to the instruction stored at address at AA, which is the instruction for halting the programming. So the answer is halting execution, causing the program to stop.
+
+
+2. The first advantage is that the when the power of the computer is off, the data previously stored in the main memory(DRAM) will be gone, but the data previously in hard disk( categorized as second memory) will stay as long as it is intact. The second advantage is that the capacity of hard disk is far bigger than that of the main mamory, which allows user to store huge amount of data into the hard disk. (ps. The hard disk is most of time cheaper than the main memory.) 
+
+
+3. The interpreter directly executes the program coded by the programming language. The complier will transform the high-level language to lower-level or the language that the computer can directly executed.
+
+
+
+III True or False 
+
+1. T
+
+2. T
+
+3. F
+
+4. T
+
+5. F 
+
+
+
+IV Explain outputs and bugs 
+1. The output is 55555. int function has to be placed before input like x = int(input('Please give a number'))
+
+
+2. The output is 0.0  The / operators should all be replaced by // operators. 
+The new code:
+	a = 345
+	hundred_digit = a//100
+	tens_digit = (a - hundred_digit)//10
+	print(tens_digit)
+
+
+3.The first output is 1.  Because the y in func1 is a local variable, whatever the value of the local variable,
+   print function cannot access it. Instead, it will print the global variable y =1. 
+   The second output is [1,2] Because when we call the func1 with param [1], python are actually sending reference of [1] to the local variable y of func1, so whatever operation the func1 has done on the modification on the [1], the global variable y which originally pointed to [1] can access the modified version of [1], that is [1,2]
+
+
+4. The output is [2,4,8,16,32]. Because b = a[:] statement will shallow copy the list a, which means for every modification of the first-demensional element in the list b, a will not be affected. So after b.pop() is executed, a is still [1,2,4,8,16]. Next, through the multiplying statement, all the element in list a will be doubled.
+
+
+5. It will endlessly ptint 1 out and raise error that the maximum recursion depth is reached( If the python interpreter controls the maximum number of times the function is being recursively called). Because fun2 is first called, then in fun2, fun1() is called, then 1 is printed. Shortly afterwards, fun2() is called again, and then fun2() calls fun1() again. So the program will endlessly print 1 out and reach the maximum recursive depth regulated by python.(If any).
+
+
+
+
+MAKE SURE YOU SAVED ALL YOUR ANSWERS.

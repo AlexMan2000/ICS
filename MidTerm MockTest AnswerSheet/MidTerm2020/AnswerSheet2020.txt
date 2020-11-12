@@ -1,0 +1,24 @@
+Part 1
+1. T
+2. F
+3. F
+4. F
+5. T
+
+Part 2
+1.O(N)
+2.O(logN)
+3.O(N^2)
+4.O(N^2)
+5.O(N^2)
+6.1)All the elements are already in ascending order.
+  2)All the elements are in descending order.
+
+Part 3
+1.b) O(n^2),for each iteration of elements in the list, we have to find the exact
+position it belongs to, which requires another traverse in the sorted part of the list
+, so the total runtime is O(n*n) = O(n^2)
+2.c) O(1) We only use some variables that hold the integers and we don't use
+extra list to accomplish the algorithm. In other words, we modify the list
+in place. Therefore, the space complexity is O(1)
+

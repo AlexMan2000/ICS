@@ -1,0 +1,7 @@
+cater
+race
+pants
+tea
+sound
+ring
+road
