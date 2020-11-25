@@ -215,15 +215,15 @@ a.insert(-1,10)
 print(a)
 #
 #
-# import pickle
-# a = {'a':1,'b':2,'q':3}
-# newfile = open('tester.txt','wb')
-# pickle.dump(a,newfile)
-# newfile.close()
-#
-# extract = open('tester.txt','rb')
-# ob = pickle.load(extract)
-# print(ob)
+import pickle
+a = {'a':1,'b':2,'q':3}
+newfile = open('tester.txt','wb')
+pickle.dump(a,newfile)
+newfile.close()
+
+extract = open('tester.txt','rb')
+ob = pickle.load(extract)
+print(ob)
 
 a = 'VIII alexbob?!'
 print(a[2:None])
@@ -245,3 +245,55 @@ a += b
 print(a)
 
 
+import numpy
+lissy = numpy.arange(20,50)
+print(lissy)
+
+a = [(2,3),(3,4)]
+for m,(n,t) in enumerate(a):
+    print(m,n,t)
+
+(t,q) = (2,3)
+print(t,q)
+
+a = [1,2,3]
+b = [2,3,4]
+t = list(zip(a,b))
+print(t)
+
+
+t = open('tester2.txt','w')
+for i in range(100):
+    t.write(str(i)+'\n')
+t.close()
+lines2 = []
+lines3 = []
+m = open('tester2.txt','r')
+lines = m.readlines()
+# lines2+=m.read().split('\n')
+lines3+=lines
+# print(lines2)
+print(lines3)
+m.close()
+
+a = {'a':2,'b':3}
+print(sorted(a,key = a.get,reverse = True))
+
+
+a = [1,2,3]
+b = [1,2,3]
+print(a == b)
+
+a = "asw\n"
+print(a.strip())
+print(2)
+
+print((((8-4)/2)*((3+1)+2))-(3*(7-2)+1))
+
+t = [1,2,3]
+m = '123'
+# print(m.index("4"))
+
+print(type(ord("A")))
+print(m.replace('1','2'))
+print(m)

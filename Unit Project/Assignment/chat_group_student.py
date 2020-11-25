@@ -31,8 +31,8 @@ class Group:
 
         # IMPLEMENTATION
         # ---- start your code ---- #
-        pass
-
+        if name in self.members:
+            return True
         return False
         # ---- end of your code --- #
 
@@ -43,8 +43,8 @@ class Group:
         """
         # IMPLEMENTATION
         # ---- start your code ---- #
-        pass
-
+        self.disconnect(name)
+        del self.members[name]
         # ---- end of your code --- #
         return
 
@@ -59,7 +59,11 @@ class Group:
         group_key = 0
         # IMPLEMENTATION
         # ---- start your code ---- #
-        pass
+        if name in self.members:
+            for k,v in self.chat_grps.items():
+                if name in v:
+                    found = True
+                    group_key = k
 
         # ---- end of your code --- #
         return found, group_key
@@ -74,7 +78,20 @@ class Group:
 
         # IMPLEMENTATION
         # ---- start your code ---- #
-        pass
+        is_in_me_sys = self.is_member(me)
+        is_in_peer_sys = self.is_member(peer)
+        if is_in_me_sys and is_in_peer_sys:
+            is_in_peer_grp, group_id_peer = self.find_group(peer)
+            is_in_me_grp,group_id_me = self.find_group(me)
+            self.members[me] = S_TALKING
+            if not is_in_me_grp and not is_in_peer_grp:
+                self.members[peer] = S_TALKING
+                self.chat_grps[self.grp_ever+1] = []
+                self.chat_grps[self.grp_ever+1].append(me)
+                self.chat_grps[self.grp_ever+1].append(peer)
+                self.grp_ever += 1
+            if not is_in_me_grp and is_in_peer_grp:
+                self.chat_grps[group_id_peer].append(me)
 
         # ---- end of your code --- #
         return
@@ -86,7 +103,19 @@ class Group:
         """
         # IMPLEMENTATION
         # ---- start your code ---- #
-        pass
+        is_in = self.is_member(me)
+        if is_in:
+            is_in_group,group_id = self.find_group(me)
+            if is_in_group:
+                self.members[me] = S_ALONE
+                self.chat_grps[group_id].remove(me)
+                if len(self.chat_grps[group_id]) == 1:
+                    the_other = self.chat_grps[group_id][0]
+                    self.members[the_other] = S_ALONE
+                    del self.chat_grps[group_id]
+                elif len(self.chat_grps[group_id]) == 0:
+                    del self.chat_grps[group_id]
+
 
         # ---- end of your code --- #
         return
@@ -107,10 +136,30 @@ class Group:
         my_list = []
         # IMPLEMENTATION
         # ---- start your code ---- #
-        pass
+        is_in = self.is_member(me)
+        if is_in:
+            is_in_group, group_id = self.find_group(me)
+            if is_in_group:
+                my_list.append(me)
+                for member in self.chat_grps[group_id]:
+                    if member is not me:
+                        my_list.append(member)
 
         # ---- end of your code --- #
         return my_list
+
+
+    #Altenative implementation
+    # def loners_num(self):
+    #     pass
+    #
+    #
+    # def biggest_grp(self):
+    #     pass
+    #
+    #
+    # def grps_two(self):
+    #     pass
 
 
 if __name__ == "__main__":
